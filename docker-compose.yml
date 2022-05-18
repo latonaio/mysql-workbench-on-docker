@@ -1,0 +1,13 @@
+version: "3"
+services:
+  mysql-workbench:
+    container_name: mysql-workbench
+    build:
+      context: .
+    privileged: true
+    network_mode: host
+    volumes:
+      - /var/lib/mysql-workbench-docker/mysql:/root/.mysql
+      - /var/lib/mysql-workbench-docker/keyrings:/root/.local/share/keyrings
+    environment:
+      - DISPLAY
